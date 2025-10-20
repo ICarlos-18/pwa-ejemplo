@@ -6,9 +6,9 @@ const BASE_PATH= "/pwa-ejemplo/";
 const urlsToCache = [
     `${BASE_PATH}index.html`,
     `${BASE_PATH}style.css`,
-    `${BASE_PATH}login.html`,
     `${BASE_PATH}manifest.json`,
     `${BASE_PATH}offline.html`,
+    `${BASE_PATH}login.html`,
     `${BASE_PATH}icons/logox192.png`,
     `${BASE_PATH}icons/logox512.png`,
 ];
@@ -20,7 +20,7 @@ self.addEventListener('install', event => {
     console.log("Service Worker: instalando....");
     event.waitUntil(
         caches.open(CACHE_NAME).then(cache => {
-            console.log("Service Worker: cacheando...");
+            console.log("Service Worker: cacheando....");
             return cache.addAll(urlsToCache)
         })
     );
